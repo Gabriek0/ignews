@@ -1,14 +1,13 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../../styles/global.module.scss'
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>ig.news</title>
+        <title>Início | ig.news</title>
       </Head>
-      <h1 className={styles.title}>Olá</h1>
+      <h1>Olá</h1>
     </>
   )
 }
