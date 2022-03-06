@@ -17,12 +17,13 @@
         height: 5rem;
 
         a {
-            display: inline-block; // Inline-block permite definir uma altura, largura e espaçamento entre os elementos na mesma linha
+            display: inline-block; // Inline-block permite definir uma altura, largura e preenchimento interno
             position: relative; //Relativo ao elemento pai, abre a opção do elemento filho ser absoluto
             padding: 0 0.5rem;
             height: 5rem;
             line-height: 5rem;
             color: var(--gray-300);
+            cursor: pointer;
             transition: color 0.2s;
 
             & + a {
@@ -49,5 +50,10 @@
                 background: var(--yellow-500);
             }
         }
+
+    }
+    
+    button {
+        margin-left: auto;
     }
 }
