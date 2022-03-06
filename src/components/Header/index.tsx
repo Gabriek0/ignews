@@ -4,11 +4,11 @@ import styles from './styles.module.scss'
 
 export function Header() {
     return (
-        <header>
-            <div>
+        <header className={styles.headerContainer}>
+            <div className={styles.headerContent}>
                 <Image src={logo} alt='logo' />
                 <nav>
-                    <a>Home</a>
+                    <a className={styles.active}>Home</a>
                     <a>Posts</a>
                 </nav>
             </div>
