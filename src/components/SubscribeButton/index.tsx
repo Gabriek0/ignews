@@ -1,3 +1,4 @@
+import { signIn, useSession } from 'next-auth/react';
 import styles from './styles.module.scss'
 
 interface SubscribeButtonProps {
