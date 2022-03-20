@@ -6,6 +6,16 @@ interface SubscribeButtonProps {
 }
 
 export function SubscribeButton({ priceId }: SubscribeButtonProps) {
+    const { data: session } = useSession();
+
+    function handleSubsribe() {
+        if (!session) {
+            signIn();
+            return;
+        }
+
+        // create checkout session
+    }
 
     return (
         <button
