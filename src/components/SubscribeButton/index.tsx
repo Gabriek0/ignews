@@ -26,8 +26,12 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps) {
 
             await stripe!.redirectToCheckout({ sessionId })
 
-        } catch {
-
+        } catch (err) {
+            let errorMessage = 'Failed';
+            if (err instanceof Error) {
+                errorMessage = err.message;
+            }
+            alert(errorMessage);
         }
     }
 
