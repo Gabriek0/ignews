@@ -1,6 +1,6 @@
 <h1 align="center">Ignews 📖</h1>
 
-
+### 💻 Descrição 
 <p align="justify">Uma plataforma para leitores de artigos de blog.</p>
 
 
@@ -32,10 +32,10 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ```bash
 # Clone o repositório
-git clone https://github.com/Gabriek0/github-explorer.git
+git clone https://github.com/Gabriek0/ignews.git
 
 # Mude para o diretório do projeto
-cd https://github.com/Gabriek0/github-explorer.git
+cd https://github.com/Gabriek0/ignews.git
 
 # Instale as dependências
 yarn
@@ -44,7 +44,7 @@ yarn
 yarn dev
 ```
 
-###🧑 Autor do Projeto
+### 🧑 Autor do Projeto
 
 <table>
   <tr>
