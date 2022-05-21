@@ -1,4 +1,4 @@
-import { GetServerSideProps, GetStaticProps } from "next"
+import { GetStaticPaths, GetStaticProps } from "next";
 import { useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
@@ -55,15 +55,18 @@ export default function Preview({ post }: PostPreviewProps) {
     )
 }
 
-// Todas as páginas que são geradas de forma estática
-// disponibilizam o conteúdo inteiro sem verificação
 
-export const getStaticPaths = () => {
+
+export const getStaticPaths: GetStaticPaths = () => {
     return {
         paths: [],
         fallback: 'blocking'
     }
 };
+
+
+// Todas as páginas que são geradas de forma estática
+// disponibilizam o conteúdo inteiro sem verificação
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const slug = params?.slug;
@@ -85,6 +88,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
 
     return {
-        props: { post }
+        props: { post },
+        redirect: 60 * 30 // 30 min
     }
 }
