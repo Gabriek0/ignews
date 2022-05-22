@@ -45,25 +45,25 @@
             -webkit-text-fill-color: transparent;
         }
 
-
     }
-}
 
-.continueReading {
-    padding: 2rem;
-    text-align: center;
-    background: var(--gray-850);
-    border-radius: 100px;
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin: 4rem 0.2rem;
-
-    a {
-        color: var(--yellow);
-        margin-left: 0.5rem;
+    .continueReading {
+        padding: 2rem;
+        text-align: center;
+        background: var(--gray-750);
+        border-radius: 100px;
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin: 4rem 0.2rem;
     
-        &:hover {
-            text-decoration: underline;
+        a {
+            color: var(--yellow-500);
+            margin-left: 0.5rem;
+        
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }
+

@@ -19,7 +19,7 @@ interface PostPreviewProps {
 }
 
 
-export default function Preview({ post }: PostPreviewProps) {
+export default function PostPreview({ post }: PostPreviewProps) {
     const router = useRouter();
     const { data: session } = useSession();
 
@@ -70,8 +70,6 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const slug = params?.slug;
-
-
     const prismic = getPrismicClient();
 
     const response: any = await prismic.getByUID('publication', String(slug), {});
@@ -79,8 +77,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const post = {
         slug,
         title: RichText.asText(response?.data.title),
-        content: RichText.asHtml(response.data.content.splice(0, 3)),
-        updatedAt: new Date(response.last_publication_date!).toLocaleDateString('pt-BR', {
+        content: RichText.asHtml(response?.data.content.splice(0, 3)),
+        updatedAt: new Date(response?.last_publication_date!).toLocaleDateString('pt-BR', {
             day: '2-digit',
             month: 'long',
             year: 'numeric'
