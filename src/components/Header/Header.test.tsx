@@ -16,7 +16,7 @@ jest.mock("next-auth/react", () => {
   return {
     useSession: jest.fn(() => {
       return {
-        data: [null, false],
+        data: null,
       };
     }),
   };
