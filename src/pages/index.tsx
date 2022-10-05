@@ -1,21 +1,20 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import { Header } from '../components/Header';
-import { SubscribeButton } from '../components/SubscribeButton';
-import styles from './home.module.scss'
-import Image from 'next/image'
-import { GetStaticProps } from 'next'
-import { stripe } from '../services/stripe';
+import type { NextPage } from "next";
+import Head from "next/head";
+import { Header } from "../components/Header";
+import { SubscribeButton } from "../components/SubscribeButton";
+import styles from "./home.module.scss";
+import Image from "next/image";
+import { GetStaticProps } from "next";
+import { stripe } from "../services/stripe";
 
 interface HomeProps {
   product: {
-    priceId: string,
-    amount: number
-  }
+    priceId: string;
+    amount: string;
+  };
 }
 
 const Home: NextPage<HomeProps> = ({ product }: HomeProps) => {
-
   return (
     <>
       <Head>
@@ -25,13 +24,16 @@ const Home: NextPage<HomeProps> = ({ product }: HomeProps) => {
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
           <span>👏 Hey, welcome</span>
-          <h1>News about <br />the <span>React</span> world.</h1>
-          <p>Set access to all the publications <br />
+          <h1>
+            News about <br />
+            the <span>React</span> world.
+          </h1>
+          <p>
+            Set access to all the publications <br />
             <span>for {product.amount} month</span>
           </p>
-          <SubscribeButton priceId={product.priceId} />
+          <SubscribeButton />
         </section>
-
 
         <Image
           src="/images/avatar.svg"
@@ -41,26 +43,26 @@ const Home: NextPage<HomeProps> = ({ product }: HomeProps) => {
         />
       </main>
     </>
-  )
-}
+  );
+};
 
 export const getStaticProps: GetStaticProps = async () => {
-  const price = await stripe.prices.retrieve('price_1KIZXTHv09NF3LHzZi4jcSkl')
+  const price = await stripe.prices.retrieve("price_1KIZXTHv09NF3LHzZi4jcSkl");
 
   const product = {
     priceId: price.id,
-    amount: new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD'
-    }).format(price.unit_amount! / 100)
-  }
+    amount: new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(price.unit_amount! / 100),
+  };
 
   return {
     props: {
-      product
+      product,
     },
-    revalidate: 60 * 60 * 24
-  }
-}
+    revalidate: 60 * 60 * 24,
+  };
+};
 
 export default Home;
