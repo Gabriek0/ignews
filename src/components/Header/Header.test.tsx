@@ -27,6 +27,9 @@ useSession();
 describe("Header component", () => {
   it("render correctly", () => {
     render(<Header />);
+
+    screen.logTestingPlaygroundURL();
+
     expect(screen.getByText("Home")).toBeInTheDocument();
     expect(screen.getByText("Posts")).toBeInTheDocument();
   });
