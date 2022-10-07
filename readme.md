@@ -20,7 +20,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [PrismicCMS][prismic]
 - [SASS][sass]
 - [Yarn][yarn]
-
+- [Jest][jest]
+- [Testing-Library-React][testing-library]
+  
 [javascript]: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript
 [typescript]: https://www.typescriptlang.org/
 [reactjs]: https://reactjs.org
@@ -30,6 +32,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 [prismic]: https://prismic.io/
 [sass]: https://sass-lang.com/
 [yarn]: https://yarnpkg.com/
+[jest]: https://jestjs.io/
+[testing-library]: https://testing-library.com/
 
 ### 🤔 Como rodar o projeto? 
 
