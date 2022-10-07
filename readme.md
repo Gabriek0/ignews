@@ -3,10 +3,13 @@
 ### 💻 Descrição 
 <p align="justify">Uma plataforma para leitores de artigos de blog.</p>
 
+👉 Acesse o projeto: [Ignews](https://ignews-gabriek0.vercel.app/)
 
 ### :nut_and_bolt: Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+
 
 - [Javascript][javascript]
 - [TypeScript][typescript]
