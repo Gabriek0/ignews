@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 
 import { ActiveLink } from "../ActiveLink";
 import { SignInButton } from "../SignInButton";
+
 import Link from "next/link";
 
 export function Header() {
@@ -11,16 +12,18 @@ export function Header() {
         <Link href="/">
           <img src="/images/logo.svg" alt="Ignews logo" />
         </Link>
-        <nav>
-          <ActiveLink activeClassName={styles.active} href="/">
-            <a className={styles.active}>Home</a>
-          </ActiveLink>
-          <ActiveLink activeClassName={styles.active} href="/posts" prefetch>
-            <a>Posts</a>
-          </ActiveLink>
-        </nav>
 
-        <SignInButton />
+        <div className={styles.headerNav}>
+          <nav>
+            <ActiveLink activeClassName={styles.active} href="/">
+              <a className={styles.active}>Home</a>
+            </ActiveLink>
+            <ActiveLink activeClassName={styles.active} href="/posts" prefetch>
+              <a>Posts</a>
+            </ActiveLink>
+          </nav>
+          <SignInButton />
+        </div>
       </div>
     </header>
   );
