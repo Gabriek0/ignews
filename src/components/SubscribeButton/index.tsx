@@ -4,9 +4,13 @@ import { api } from "../../services/api";
 import { getStripeJs } from "../../services/stripe-js";
 import styles from "./styles.module.scss";
 
+import { SessionProps } from "../../pages/posts/[slug]";
+
 export function SubscribeButton() {
-  const { data: session } = useSession();
+  const userSession = useSession();
   const router = useRouter();
+
+  const session = userSession.data as SessionProps;
 
   async function handleSubscribe() {
     if (!session) {
