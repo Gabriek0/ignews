@@ -6,7 +6,7 @@ interface WindowSize {
 }
 
 function useWindowSize() {
-  const isSSR = typeof window !== "undefined";
+  const isSSR = typeof window === "undefined";
 
   const [windowSize, setWindowSize] = useState<WindowSize>({
     width: isSSR ? 1366 : window.innerWidth,

@@ -1,11 +1,22 @@
-import styles from "./styles.module.scss";
+import Link from "next/link";
 
+// Components
 import { ActiveLink } from "../ActiveLink";
 import { SignInButton } from "../SignInButton";
 
-import Link from "next/link";
+// Styles
+import styles from "./styles.module.scss";
+
+// Hooks
+import useWindowSize from "../../utils/useWindowSize";
+
+// Icons
+import { List } from "phosphor-react";
 
 export function Header() {
+  const { width } = useWindowSize();
+
+  console.log(width);
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
@@ -14,15 +25,25 @@ export function Header() {
         </Link>
 
         <div className={styles.headerNav}>
-          <nav>
-            <ActiveLink activeClassName={styles.active} href="/">
-              <a className={styles.active}>Home</a>
-            </ActiveLink>
-            <ActiveLink activeClassName={styles.active} href="/posts" prefetch>
-              <a>Posts</a>
-            </ActiveLink>
-          </nav>
-          <SignInButton />
+          {width < 780 ? (
+            <List size={43} color="#fff" />
+          ) : (
+            <>
+              <nav>
+                <ActiveLink activeClassName={styles.active} href="/">
+                  <a className={styles.active}>Home</a>
+                </ActiveLink>
+                <ActiveLink
+                  activeClassName={styles.active}
+                  href="/posts"
+                  prefetch
+                >
+                  <a>Posts</a>
+                </ActiveLink>
+              </nav>
+              <SignInButton />
+            </>
+          )}
         </div>
       </div>
     </header>
