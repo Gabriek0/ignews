@@ -4,10 +4,10 @@
 }
 
 .headerContent {
-    max-width: 1120px;
     height: 5rem;
     margin: 0 auto;
     padding: 0 2rem;
+    max-width: 1120px;
 
     display: flex;
 
@@ -17,7 +17,9 @@
 
         cursor: pointer;
     }
-
+    
+    
+    
     .headerNav {
         display: flex;
         align-items: center;
