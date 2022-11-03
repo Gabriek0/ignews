@@ -1,8 +1,10 @@
 import { GetServerSideProps } from "next";
 import { Session } from "next-auth";
-import { getSession } from "next-auth/react";
+import { getSession, useSession } from "next-auth/react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { RichText } from "prismic-dom";
+import { useEffect } from "react";
 import { getPrismicClient } from "../../services/prismic";
 
 import styles from "./post.module.scss";
@@ -30,6 +32,17 @@ export interface SessionProps extends Session {
 }
 
 export default function Post({ post }: PostProps) {
+  const router = useRouter();
+  const userSession = useSession();
+
+  const session = userSession.data as SessionProps;
+
+  useEffect(() => {
+    if (session?.activeSubscription) {
+      router.push(`/posts/${post.slug}`);
+    }
+  }, [session]);
+
   return (
     <>
       <Head>
@@ -61,8 +74,6 @@ export const getServerSideProps: GetServerSideProps = async ({
 
   const slug = params?.slug;
 
-  console.log(session.activeSubscription);
-
   if (!session?.activeSubscription) {
     return {
       redirect: {
@@ -82,9 +93,9 @@ export const getServerSideProps: GetServerSideProps = async ({
 
   const post = {
     slug,
-    title: RichText.asText(response.data.title),
-    content: RichText.asHtml(response.data.content),
-    updatedAt: new Date(response.last_publication_date!).toLocaleDateString(
+    title: RichText.asText(response?.data.title),
+    content: RichText.asHtml(response?.data.content),
+    updatedAt: new Date(response?.last_publication_date!).toLocaleDateString(
       "pt-BR",
       {
         day: "2-digit",

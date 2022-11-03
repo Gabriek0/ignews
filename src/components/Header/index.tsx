@@ -16,7 +16,6 @@ import { List } from "phosphor-react";
 export function Header() {
   const { width } = useWindowSize();
 
-  console.log(width);
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
