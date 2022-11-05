@@ -1,9 +1,10 @@
 <h1 align="center">Ignews 📖</h1>
 
-### 💻 Descrição 
+### 💻 Descrição
+
 <p align="justify">Uma plataforma para leitores de artigos de blog.</p>
 
-👉 Acesse o projeto: [Ignews](https://ignews-gabriek0.vercel.app/)
+👉 Acesse o projeto: [Ignews](https://ignews-six-beige.vercel.app/)
 
 ### :nut_and_bolt: Tecnologias
 
@@ -20,7 +21,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Yarn][yarn]
 - [Jest][jest]
 - [Testing-Library-React][testing-library]
-  
+
 [javascript]: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript
 [typescript]: https://www.typescriptlang.org/
 [reactjs]: https://reactjs.org
@@ -33,7 +34,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 [jest]: https://jestjs.io/
 [testing-library]: https://testing-library.com/
 
-### 🤔 Como rodar o projeto? 
+### 🤔 Como rodar o projeto?
 
 ```bash
 # Clone o repositório
@@ -65,7 +66,3 @@ yarn dev
 
   </tr>
 </table>
-
-
-
-
