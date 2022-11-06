@@ -4,7 +4,7 @@
 
 <p align="justify">Uma plataforma para leitores de artigos de blog.</p>
 
-👉 Acesse o projeto: [Ignews](https://ignews-six-beige.vercel.app/)
+👉 Acesse o projeto: [Ignews](https://ignews-gabriek0.vercel.app/)
 
 ### :nut_and_bolt: Tecnologias
 
