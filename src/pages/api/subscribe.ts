@@ -16,7 +16,7 @@ type User = {
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
     // acessing cookies that contain the information of the logged in user.
-    const session = await getSession({ req });
+    const session = await req.body.user;
 
     const user = await fauna.query<User>(
       q.Get(
