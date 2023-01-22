@@ -49,7 +49,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       billing_address_collection: "required",
       line_items: [
         {
-          price: "price_1LqMgVHv09NF3LHz17TPPGRL",
+          price: "price_1MT4gTHv09NF3LHzCBN9kb7f",
           quantity: 1,
         },
       ],
