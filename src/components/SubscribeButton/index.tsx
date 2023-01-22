@@ -25,8 +25,6 @@ export function SubscribeButton() {
 
     // create checkout session
     try {
-      console.log(session.user);
-
       const response = await api.post("/subscribe", {
         user: session,
       });
