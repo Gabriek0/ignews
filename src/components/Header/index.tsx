@@ -12,6 +12,7 @@ import useWindowSize from "../../utils/useWindowSize";
 
 // Icons
 import { List } from "phosphor-react";
+import { Buttons } from "../Buttons";
 
 export function Header() {
   const { width } = useWindowSize();
@@ -40,7 +41,7 @@ export function Header() {
                   <a>Posts</a>
                 </ActiveLink>
               </nav>
-              <SignInButton />
+              <Buttons />
             </>
           )}
         </div>
