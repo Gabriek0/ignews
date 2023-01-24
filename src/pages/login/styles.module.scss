@@ -8,13 +8,41 @@
   padding: 1rem;
 
   .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+
     h1 {
       text-align: center;
       font-weight: bold;
       font-size: 4.5rem;
 
+      margin-bottom: 3rem;
+
       span {
         color: var(--cyan-500);
+      }
+    }
+
+    > p {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--gray-100);
+
+      > strong {
+        cursor: pointer;
+
+        padding-left: 0.2rem;
+        text-decoration: underline;
+
+        transition: filter 0.2s ease;
+
+        &:hover {
+          filter: brightness(0.9);
+        }
       }
     }
   }
