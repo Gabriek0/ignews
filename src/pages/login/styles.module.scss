@@ -1,0 +1,21 @@
+.main {
+  height: 720px;
+  max-width: 1120px;
+
+  margin: 0 auto;
+  margin-top: 5rem;
+
+  padding: 1rem;
+
+  .content {
+    h1 {
+      text-align: center;
+      font-weight: bold;
+      font-size: 4.5rem;
+
+      span {
+        color: var(--cyan-500);
+      }
+    }
+  }
+}
