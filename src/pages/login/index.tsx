@@ -2,10 +2,19 @@ import { NextPage } from "next";
 
 // Components
 import { Input } from "../../components/Input";
+import { SubscribeButton } from "../../components/SubscribeButton";
 
+// Styles
 import styles from "./styles.module.scss";
 
-import { Envelope, Lock } from "phosphor-react";
+// Phosphor Icons
+import {
+  Envelope,
+  GithubLogo,
+  GoogleLogo,
+  LinkedinLogo,
+  Lock,
+} from "phosphor-react";
 
 const Login: NextPage = () => {
   return (
@@ -15,22 +24,38 @@ const Login: NextPage = () => {
           Let's <span>sign you</span> in
         </h1>
 
-        <Input
-          label="Email"
-          icon={<Envelope />}
-          placeholder="Your Email"
-          type="email"
-        />
-        <Input
-          label="Password"
-          icon={<Lock />}
-          placeholder="********"
-          type="password"
-        />
+        <div className={styles.loginContainer}>
+          <Input
+            label="Email"
+            icon={<Envelope />}
+            placeholder="Your Email"
+            type="email"
+          />
+          <Input
+            label="Password"
+            icon={<Lock />}
+            placeholder="********"
+            type="password"
+          />
 
-        <p>
-          Don’t have an account? <strong>Register</strong>{" "}
-        </p>
+          <p>
+            Don’t have an account? <strong>Register</strong>{" "}
+          </p>
+
+          <SubscribeButton type="login" text="Sign in" />
+
+          <div className={styles.separator}>
+            <div className={styles.row} />
+            <p>Or login with</p>
+            <div className={styles.row} />
+          </div>
+
+          <div className={styles.icons}>
+            <GoogleLogo />
+            <GithubLogo />
+            <LinkedinLogo />
+          </div>
+        </div>
       </div>
     </main>
   );

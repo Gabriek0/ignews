@@ -32,7 +32,7 @@ const Home: NextPage<HomeProps> = ({ product }: HomeProps) => {
             Set access to all the publications <br />
             <span>for {product.amount} month</span>
           </p>
-          <SubscribeButton />
+          <SubscribeButton type="subscribe" text="Subscribe now" />
         </section>
 
         <div className={styles.img}>

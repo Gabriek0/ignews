@@ -6,13 +6,20 @@ import styles from "./styles.module.scss";
 
 import { SessionProps } from "../../pages/posts/[slug]";
 
-export function SubscribeButton() {
+interface Props {
+  type: "subscribe" | "login" | "register";
+  text: string;
+}
+
+export function SubscribeButton({ type, text }: Props) {
   const userSession = useSession();
   const router = useRouter();
 
   const session = userSession.data as SessionProps;
 
   async function handleSubscribe() {
+    if (type !== "subscribe") return;
+
     if (!session) {
       signIn();
       return;
@@ -49,7 +56,7 @@ export function SubscribeButton() {
       className={styles.subscribeButton}
       onClick={handleSubscribe}
     >
-      Subscribe now
+      {text}
     </button>
   );
 }
